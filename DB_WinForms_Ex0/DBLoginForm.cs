@@ -27,6 +27,7 @@ namespace DB_WinForms_Ex0
 
             SqlConBuilder.SqlConnectionString.UserID = Login.Text;
             SqlConBuilder.SqlConnectionString.Password = Pass.Text;
+            SqlConBuilder.SqlConnectionString.Pooling = true;
 
             if (SqlConBuilder.ConnectionTest()==true)
             {

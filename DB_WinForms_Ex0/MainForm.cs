@@ -45,17 +45,11 @@ namespace DB_WinForms_Ex0
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            SqlConBuilder.Command.CommandText = "SELECT TOP(1000) *FROM[TSOOPEX].[Person].[Address]";
+            SqlConBuilder.Command.CommandText = "SELECT TOP (1000) [AddressID],[AddressLine1],[AddressLine2]" +
+                ",[City],[StateProvinceID],[PostalCode],[rowguid],[ModifiedDate] FROM[TSOOPEX].[Person].[Address]";
 
-            if (SqlConBuilder.Read() == true)
-            {
-                MessageBox.Show("чтение прошло успешно");
-            
-            }
-            else
-            {
-                MessageBox.Show(" что-то пошло не так! ");
-            }
+            SqlConBuilder.Read(ref this.dataGridView1);
+      
         }
     }
 }
